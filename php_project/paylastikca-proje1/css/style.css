@@ -254,6 +254,7 @@ background: url("../img/iletisim.jpg");
 }
 textarea{
   font-family: Arial;
+  resize: none !important;
 }
 input[type="submit"]{
   cursor: pointer;

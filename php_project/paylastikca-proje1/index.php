@@ -1,3 +1,7 @@
+<?php
+include "connect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anasayfa | Paylaştıkça</title>
+
+    <!-- Alertify Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.min.css" integrity="sha512-IXuoq1aFd2wXs4NqGskwX2Vb+I8UJ+tGJEu/Dc0zwLNKeQ7CW3Sr6v0yU3z5OQWe3eScVIkER4J9L7byrgR/fA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -152,30 +159,33 @@
 <section id="iletisim">
     <div class="container">
         <h3 id="h3iletisim">İletişim</h3>
-        <div id="iletisimopak">
-            <div id="formgroup">
-                <div id="solform">
-                    <input type="text" name="isim" placeholder="Ad Soyad" required class="form-control">
-                    <input type="text" name="tel" placeholder="Telefon Numarası" required class="form-control">
-                </div>
-                <div id="sagform">
-                    <input type="email" name="email" placeholder="Email Adresiniz" required class="form-control">
-                    <input type="text" name="konu" placeholder="Konu Başlığı" required class="form-control">
-                </div>
-                <textarea name="mesaj" cols="30" rows="10" class="form-control" placeholder="Mesaj Giriniz"></textarea>
-                <input type="submit" value="Gönder"/>
-            </div>
 
-            <div id="adres">
-                <h4 id="adresbaslik">Adres: </h4>
-                <p class="adresp">Mehmet Akif Ersoy Mah.</p>
-                <p class="adresp">Akyıldız Caddesi</p>
-                <p class="adresp">Oğuz Bey sokak No:123</p>
-                <p class="adresp">0212 389 99 99</p>
-                <p class="adresp">Email: paylastikca@paylastikca.com</p>
-            </div>
-        </div>
+        <form action="insert.php" method="post">
+            <div id="iletisimopak">
+                <div id="formgroup">
+                    <div id="solform">
+                        <input type="text" name="isim" placeholder="Ad Soyad" required class="form-control">
+                        <input type="text" name="telefon" placeholder="Telefon Numarası" required class="form-control">
+                    </div>
+                    <div id="sagform">
+                        <input type="email" name="email" placeholder="Email Adresiniz" required class="form-control">
+                        <input type="text" name="konu" placeholder="Konu Başlığı" required class="form-control">
+                    </div>
+                    <textarea name="mesaj" cols="30" rows="10" class="form-control"
+                              placeholder="Mesaj Giriniz"></textarea>
+                    <input type="submit" value="Gönder"/>
+                </div>
 
+                <div id="adres">
+                    <h4 id="adresbaslik">Adres: </h4>
+                    <p class="adresp">Mehmet Akif Ersoy Mah.</p>
+                    <p class="adresp">Akyıldız Caddesi</p>
+                    <p class="adresp">Oğuz Bey sokak No:123</p>
+                    <p class="adresp">0212 389 99 99</p>
+                    <p class="adresp">Email: paylastikca@paylastikca.com</p>
+                </div>
+            </div>
+        </form>
         <footer>
             <div id="copyright">Tüm Hakları Saklıdır</div>
             <div id="socialfooter">
@@ -197,8 +207,27 @@
 
 <!-- Owl Js -->
 <script src="owl/owl.carousel.min.js"></script>
+<!-- Alertify Js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js" integrity="sha512-JnjG+Wt53GspUQXQhc+c4j8SBERsgJAoHeehagKHlxQN+MtCCmFDghX9/AcbkkNRZptyZU4zC8utK59M5L45Iw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="owl/script.js"></script>
+<?php
+
+// Formun gonderilmesi zamani alert verilmesi ucun
+if (isset($_SESSION['success'])){ // sessionun success olub olmadigini yoxlayir
+     //session success true olursa alertify codlari yazdirilsin
+   echo
+ "   <script>
+        $(function () {
+            alertify.success('Mesajiniz ugurla gonderildi');
+        })
+    </script>";
+
+   // session bitdiyi zaman
+   session_destroy();
+}
+?>
 
 
 </body>
 </html>
+

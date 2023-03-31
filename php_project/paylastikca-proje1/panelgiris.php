@@ -68,3 +68,25 @@
 
 </body>
 </html>
+
+
+<?php
+
+// Kayitlari hafizada tutmak icin session baslatiyoruz
+session_start();
+
+//iputdan aldigimiz usrnm ve passwor olup olmadigini kontrol ediyor
+if(isset( $_POST["usrnm"],$_POST["psw"])){
+    // Varsa usrnmae ve pass uygun olarak admin - 12345 esitligini yokluyoruz
+    if($_POST["usrnm"] == "admin" && $_POST["psw"] == "12345"){
+        //giris yapildiktan sonra user adinda session yaratiyoruz ve postdan aldigimiz deyeri buraya assign ediyoruz
+        $_SESSION["user"] = $_POST["usrnm"];
+        // session assign edildikden sonra panel.php sayfasina yonlendiriyoruz
+        header("location:panel.php");
+    } else{
+        // giris bilgileri dogru olmazsa alert verdiriyoruz
+        echo '<script> alert("Kullanici adi ve ya sifre yanlis")</script>';
+    }
+}
+
+?>
