@@ -18,16 +18,15 @@ if($name && $telefon && $email && $konu && $mesaj){ // post ile alinan deyerleri
      // DB-de qeyd etdiyimiz basliqlarin sirasina uygun olaraq post-dan aldigimiz melumatlar elave edilir
      $insert->execute([$name,$telefon,$email,$konu,$mesaj]);
 
-
- if($insert){ // Formun gonderilmesi true||false yoxlanmasi
-     // Formdan gonderilibse gelen true cavabinin sessionda saxlanmasi
-     $_SESSION["success"] = "Mesajiniz ugurla gonderildi";
-     // Form gonderildikden sonra esas sehifeye avtomatik gelmesi
-     header("location:index.php");
- } else{
-     // Formdan gonderilmeyibse false oldugu ehtimald abu yazi yazilacaq
-     echo "Mesajiniz gonderilmedi";
- }
+     if($insert){ // Formun gonderilmesi true||false yoxlanmasi
+         // Formdan gonderilibse gelen true cavabinin sessionda saxlanmasi
+         $_SESSION["success"] = "Mesajiniz ugurla gonderildi";
+         // Form gonderildikden sonra esas sehifeye avtomatik gelmesi
+         header("location:index.php");
+     } else{
+         // Formdan gonderilmeyibse false oldugu ehtimald abu yazi yazilacaq
+         echo "Mesajiniz gonderilmedi";
+     }
 }
 
 ?>
