@@ -73,7 +73,7 @@
                     ";
             }
         } else{
-            echo " Hic bir veri bulunamadi";
+            echo "Hic bir veri bulunamadi";
         }
     }
 

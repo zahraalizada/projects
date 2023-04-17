@@ -1,4 +1,4 @@
-<?php include  "header.php"?>
+<?php include "header.php" ?>
 
 <body>
 <!-- ===============================================-->
@@ -14,35 +14,80 @@
                 container.classList.add('container-fluid');
             }
         </script>
-        <?php include "sidebar.php";?>
+        <?php include "sidebar.php"; ?>
+
 
         <div class="row g-0">
             <div class="col pe-lg-2 mb-3">
                 <div class="card h-lg-100 overflow-hidden">
                     <div class="card-body">
-                        <h3>Team </h3>
+                        <div class="d-flex justify-content-between align-center mb-3">
+                            <h3>Team Lists</h3>
+                            <a href="add_team.php" class="btn btn-primary">Add Member</a>
+                        </div>
                         <div id="tableExample2"
-                             data-list='{"valueNames":["name","email","age"],"page":15,"pagination":true}'>
+                             data-list='{"valueNames":["name","email","desc"],"page":15,"pagination":true}'>
                             <div class="table-responsive scrollbar">
                                 <table class="table table-bordered table-striped fs--1 mb-0">
                                     <thead class="bg-200 text-900">
                                     <tr>
                                         <th class="sort" data-sort="name">Name</th>
                                         <th class="sort" data-sort="email">Email</th>
-                                        <th class="sort" data-sort="email">Subject</th>
-                                        <th class="sort" data-sort="email">Message</th>
-                                        <th class="sort" data-sort="age">Date</th>
+                                        <th class="sort" data-sort="facebook">Facebook</th>
+                                        <th class="sort" data-sort="vimeo">Vimeo</th>
+                                        <th class="sort" data-sort="twitter">Twitter</th>
+                                        <th class="sort" data-sort="desc">Description</th>
+                                        <th class="sort" data-sort="desc">Image</th>
+                                        <th class="sort" data-sort="desc">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody class="list">
-                                    <tr>
-                                        <td class="name">Anna Watson</td>
-                                        <td class="email">anna@example.com</td>
-                                        <td class=" ">Subject</td>
-                                        <td class="age">Message</td>
-                                        <td class="age">01/01/2010</td>
-                                    </tr>
+                                    <?php
+                                        include "connect.php";
+                                        // Read team table values start
+                                        $query = "SELECT * FROM team";
+                                        $result = $conn->query($query);
+                                        $rowCount = $result->rowCount();
 
+                                        if($rowCount>0){
+                                            $row = $result->fetchAll();
+
+                                            foreach ($row as $item){
+                                                echo " 
+                                                    <tr>
+                                                        <td>".$item['name']."</td>
+                                                        <td>".$item['email']."</td>
+                                                        <td>".$item['facebook']."</td>
+                                                        <td>".$item['vimeo']."</td>
+                                                        <td>".$item['twitter']."</td>
+                                                        <td>".$item['description']."</td> 
+                                                        <td>image</td> 
+                                                        <td class='text-end'>
+                                                            <div>
+                                                                <a href='delete_user.php?p_id=<?php  ;?>' class='btn p-0' data-bs-toggle='tooltip'
+                                                                        data-bs-placement='top' title='Edit'><span
+                                                                            class='text-500 fas fa-edit'></span></a>
+                                                                <a href='#' class='btn p-0 ms-2'   data-bs-toggle='tooltip'
+                                                                        data-bs-placement='top' title='Delete'><span
+                                                                            class='text-500 fas fa-trash-alt'></span></a>
+                                                            </div>
+                                                        </td>
+                                                </tr>
+                                                ";
+                                            }
+                                        }
+                                        // Read team table values end
+
+
+
+//                                        $sql = "DELETE FROM team WHERE id=2";
+//
+//                                        if ($conn->query($sql) === TRUE) {
+//                                            echo "Delete Success";
+//                                        } else {
+//                                            echo "Delete Error" ;
+//                                        }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -58,7 +103,6 @@
 
                 </div>
             </div>
-
         </div>
 
         <?php include('footer.php'); ?>
