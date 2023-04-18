@@ -45,29 +45,32 @@
                                     <?php
                                         include "connect.php";
                                         // Read team table values start
-                                        $query = "SELECT * FROM team";
-                                        $result = $conn->query($query);
-                                        $rowCount = $result->rowCount();
+                                        $query = $conn->prepare("SELECT * FROM team ");
+                                        $query->execute();
+
+//                                        $query = "SELECT * FROM team";
+//                                        $result = $conn->query($query);
+                                        $rowCount = $query->rowCount();
+
 
                                         if($rowCount>0){
-                                            $row = $result->fetchAll();
+                                            while($row = $query->fetch(PDO::FETCH_OBJ)){
 
-                                            foreach ($row as $item){
-                                                echo " 
+                                                echo "
                                                     <tr>
-                                                        <td>".$item['name']."</td>
-                                                        <td>".$item['email']."</td>
-                                                        <td>".$item['facebook']."</td>
-                                                        <td>".$item['vimeo']."</td>
-                                                        <td>".$item['twitter']."</td>
-                                                        <td>".$item['description']."</td> 
-                                                        <td>image</td> 
+                                                        <td>" . $row->name. " </td>
+                                                        <td>" . $row->email . "</td>
+                                                        <td>" . $row->facebook . "</td>
+                                                        <td>" . $row->vimeo. "</td>
+                                                        <td>" . $row->twitter . "</td>
+                                                        <td>" . $row->description . "</td>
+                                                        <td>image</td>
                                                         <td class='text-end'>
                                                             <div>
-                                                                <a href='delete_user.php?p_id=<?php  ;?>' class='btn p-0' data-bs-toggle='tooltip'
+                                                                <a href='edit_user.php?p_id=$row->id' class='btn p-0' data-bs-toggle='tooltip'
                                                                         data-bs-placement='top' title='Edit'><span
                                                                             class='text-500 fas fa-edit'></span></a>
-                                                                <a href='#' class='btn p-0 ms-2'   data-bs-toggle='tooltip'
+                                                                <a href='delete_user.php?p_id=$row->id' class='btn p-0 ms-2' data-bs-toggle='tooltip'
                                                                         data-bs-placement='top' title='Delete'><span
                                                                             class='text-500 fas fa-trash-alt'></span></a>
                                                             </div>
@@ -75,6 +78,33 @@
                                                 </tr>
                                                 ";
                                             }
+//                                            foreach ($row as $item){
+
+                                                //---------------------------------------------------------------------
+//                                                echo "
+//                                                    <tr>
+//                                                        <td>".$item['name']."</td>
+//                                                        <td>".$item['email']."</td>
+//                                                        <td>".$item['facebook']."</td>
+//                                                        <td>".$item['vimeo']."</td>
+//                                                        <td>".$item['twitter']."</td>
+//                                                        <td>".$item['description']."</td>
+//                                                        <td>image</td>
+//                                                        <td class='text-end'>
+//                                                            <div>
+/*                                                                <a href='delete_user.php?p_id=<?php echo  ;?>' class='btn p-0' data-bs-toggle='tooltip'*/
+//                                                                        data-bs-placement='top' title='Edit'><span
+//                                                                            class='text-500 fas fa-edit'></span></a>
+//                                                                <a href='#' class='btn p-0 ms-2'   data-bs-toggle='tooltip'
+//                                                                        data-bs-placement='top' title='Delete'><span
+//                                                                            class='text-500 fas fa-trash-alt'></span></a>
+//                                                            </div>
+//                                                        </td>
+//                                                </tr>
+//                                                ";
+                                                //---------------------------------------------------------------------
+
+//                                            }
                                         }
                                         // Read team table values end
 
