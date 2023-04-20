@@ -4,6 +4,7 @@ $username = "root";
 $password = "";
 
 @session_start();
+@ob_start();
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=dinosaurs", $username, $password);

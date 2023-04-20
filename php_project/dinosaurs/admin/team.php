@@ -54,23 +54,23 @@
 
 
                                         if($rowCount>0){
-                                            while($row = $query->fetch(PDO::FETCH_OBJ)){
+                                            while($row = $query->fetch(PDO::FETCH_ASSOC)){
 
                                                 echo "
                                                     <tr>
-                                                        <td>" . $row->name. " </td>
-                                                        <td>" . $row->email . "</td>
-                                                        <td>" . $row->facebook . "</td>
-                                                        <td>" . $row->vimeo. "</td>
-                                                        <td>" . $row->twitter . "</td>
-                                                        <td>" . $row->description . "</td>
+                                                        <td>" . $row['name']. " </td>
+                                                        <td>" . $row['email'] . "</td>
+                                                        <td>" . $row['facebook'] . "</td>
+                                                        <td>" . $row['vimeo']. "</td>
+                                                        <td>" . $row['twitter'] . "</td>
+                                                        <td>" . $row['description'] . "</td>
                                                         <td>image</td>
                                                         <td class='text-end'>
                                                             <div>
-                                                                <a href='edit_user.php?p_id=$row->id' class='btn p-0' data-bs-toggle='tooltip'
+                                                                <a href='edit_team_member.php?p_id=".$row['id']."' class='btn p-0' data-bs-toggle='tooltip'
                                                                         data-bs-placement='top' title='Edit'><span
                                                                             class='text-500 fas fa-edit'></span></a>
-                                                                <a href='delete_user.php?p_id=$row->id' class='btn p-0 ms-2' data-bs-toggle='tooltip'
+                                                                <a href='delete_team_member.php?p_id=".$row['id']."' class='btn p-0 ms-2' data-bs-toggle='tooltip'
                                                                         data-bs-placement='top' title='Delete'><span
                                                                             class='text-500 fas fa-trash-alt'></span></a>
                                                             </div>
