@@ -70,7 +70,7 @@
                                                                 <a href='edit_team_member.php?p_id=".$row['id']."' class='btn p-0' data-bs-toggle='tooltip'
                                                                         data-bs-placement='top' title='Edit'><span
                                                                             class='text-500 fas fa-edit'></span></a>
-                                                                <a href='delete_team_member.php?p_id=".$row['id']."' class='btn p-0 ms-2' data-bs-toggle='tooltip'
+                                                                <a onclick='return confirm(\"Are you sure: \");' href='delete_team_member.php?p_id=".$row['id']."' class='btn p-0 ms-2' data-bs-toggle='tooltip'
                                                                         data-bs-placement='top' title='Delete'><span
                                                                             class='text-500 fas fa-trash-alt'></span></a>
                                                             </div>
@@ -78,6 +78,12 @@
                                                 </tr>
                                                 ";
                                             }
+
+
+//       ========= confirm delete action yes or no easy way START ===========
+//    onclick=\"javascript: return confirm('Are you sure you want to delete?') \"
+//       ========= confirm delete action yes or no easy way END ===========
+
 //                                            foreach ($row as $item){
 
                                                 //---------------------------------------------------------------------

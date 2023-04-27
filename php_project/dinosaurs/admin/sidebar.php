@@ -32,6 +32,14 @@
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Team</span></div>
                             </a>
                         </li>
+                        <li class="nav-item"><a class="nav-link  " href="about.php" aria-expanded="false">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">About</span></div>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link  " href="posts.php" aria-expanded="false">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Posts</span></div>
+                            </a>
+                        </li>
 
                     </ul>
                 </li>

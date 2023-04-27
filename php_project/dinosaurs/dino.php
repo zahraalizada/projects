@@ -76,47 +76,49 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col">
                     <div class="owl-carousel">
                         <div>
-                            <a href="dino-info.php" class="dino-img"> <img src="img/d4.jpg"> </a>
-                             <h4>Trinozavr</h4>
+                            <a href="dino-info.php" class="dino-img"> <img src="website/img/d1.jpg"> </a>
+                            <h4>Trinozavr</h4>
                             <p>Lorem ipsum 2...</p>
                         </div>
                         <div>
-                            <a href="dino-info.php" class="dino-img"> <img src="img/d5.jpg"> </a>
-                             <h4>Trinozavr</h4>
+                            <a href="dino-info.php" class="dino-img"> <img src="website/img/d2.jpg"> </a>
+                            <h4>Trinozavr</h4>
                             <p>Lorem ipsum 2...</p>
                         </div>
                         <div>
-                            <a href="dino-info.php" class="dino-img"> <img src="img/d6.jpg"> </a>
-                             <h4>Trinozavr</h4>
+                            <a href="dino-info.php" class="dino-img"> <img src="website/img/d3.jpg"> </a>
+                            <h4>Trinozavr</h4>
                             <p>Lorem ipsum 2...</p>
                         </div>
                         <div>
-                            <a href="dino-info.php" class="dino-img"> <img src="img/d3.jpg"> </a>
-                             <h4>Trinozavr</h4>
+                            <a href="dino-info.php" class="dino-img"> <img src="website/img/d4.jpg"> </a>
+                            <h4>Trinozavr</h4>
                             <p>Lorem ipsum 2...</p>
                         </div>
                         <div>
-                            <a href="dino-info.php" class="dino-img"> <img src="img/d2.jpg"> </a>
-                             <h4>Trinozavr</h4>
+                            <a href="dino-info.php" class="dino-img"> <img src="website/img/d5.jpg"> </a>
+                            <h4>Trinozavr</h4>
                             <p>Lorem ipsum 2...</p>
                         </div>
                         <div>
-                            <a href="dino-info.php" class="dino-img"> <img src="img/d1.jpg"> </a>
-                             <h4>Trinozavr</h4>
+                            <a href="dino-info.php" class="dino-img"> <img src="website/img/d6.jpg"> </a>
+                            <h4>Trinozavr</h4>
                             <p>Lorem ipsum 2...</p>
                         </div>
                         <div>
-                            <a href="dino-info.php" class="dino-img"> <img src="img/d3.jpg"> </a>
-                             <h4>Trinozavr</h4>
+                            <a href="dino-info.php" class="dino-img"> <img src="website/img/d1.jpg"> </a>
+                            <h4>Trinozavr</h4>
                             <p>Lorem ipsum 2...</p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
