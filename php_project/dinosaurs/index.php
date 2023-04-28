@@ -26,7 +26,7 @@
                     <p>
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus vel vero voluptas!</span><span>Magni, optio perspiciatis. Aperiam architecto aspernatur corporis debitis dolore dolorum ducimus eius enim eum illo ipsam libero mollitia necessitatibus nesciunt odit qui quo quod sapiente sed, sunt temporibus vitae voluptates?</span>
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus...</span>
-                        <a href="website/about.php" class="card-link">Read more</a>
+                        <a href="about.php" class="card-link">Read more</a>
                     </p>
                 </div>
             </div>

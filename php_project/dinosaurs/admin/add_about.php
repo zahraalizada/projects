@@ -22,7 +22,7 @@
 
                             <div class="mb-3"><label class="form-label" for="basic-form-textarea">Content</label><textarea class="form-control" id="basic-form-textarea" rows="3" placeholder="Description" name="about_description"></textarea></div>
 
-                            <button class="btn btn-primary" type="submit" name="add_member">Submit</button>
+                            <button class="btn btn-primary" type="submit" name="add_image">Submit</button>
                         </form>
 
 

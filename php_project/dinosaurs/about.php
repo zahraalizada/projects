@@ -14,18 +14,32 @@
     <link rel="stylesheet" type="text/css" href="website/css/main.css">
 
 
-
 </head>
 <body>
 
 <?php include "header.php" ?>
 
+<?php
+include "admin/connect.php";
+
+
+$query = $conn->prepare("SELECT * FROM about ");
+$query->execute();
+$rowCount = $query->rowCount();
+
+if ($rowCount) {
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    print_r($row['header']);
+
+}
+
+?>
 
 <main>
     <section id="banner">
         <div id="up"></div>
         <div class="container-fluid">
-            <div class="banner-img-about">
+            <div class="banner-img-about" style="background-image: url('./admin/images/<?php echo $row['image'] ?>')">
 
             </div>
         </div>
@@ -35,20 +49,9 @@
         <div class="container">
             <div class="row">
                 <div class="col py-5">
-                    <h2 class="mb-4 text-success text-center">ABOUT US</h2>
+                    <h2 class="mb-4 text-success text-center text-uppercase"><?php echo $row['header'] ?></h2>
                     <p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus vel vero voluptas!</span><span>Magni, optio perspiciatis. Aperiam architecto aspernatur corporis debitis dolore dolorum ducimus eius enim eum illo ipsam libero mollitia necessitatibus nesciunt odit qui quo quod sapiente sed, sunt temporibus vitae voluptates?</span>
-                        <span>Lorem ipsum dol r dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus...</span> ui, sunt temporibus vel vero voluptas!</span><span>Magni, optio perspiciatis. Aperiam architecto aspernatur corporis debitis dolore dolorum ducimus eius enim eum illo ipsam libero mollitia necessitatibus nesciunt odit qui quo quod sapiente sed, sunt temporibus vitae voluptates?</span>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus.</span>
-                    </p>
-                    <p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus vel vero voluptas!</sp ius enim eum illo ipsam libero mollitia necessitatibus nesciunt odit qui quo quod sapiente sed, sunt temporibus vitae voluptates?</span>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus.</span>
-                    </p>
-                    <p>
-                         Ducimus eius enim eum illo ipsam libero mollitia necessitatibus nesciunt odit
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus...</span> ui, sunt temporibus vel vero voluptas!</span><span>Magni, optio perspiciatis. Aperiam architecto aspernatur corporis debitis dolore dolorum ducimus eius enim eum illo ipsam libero mollitia necessitatibus nesciunt odit qui quo quod sapiente sed, sunt temporibus vitae voluptates?</span>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae blanditiis commodi consequatur dolorem earum est, eveniet illo nobis nostrum, porro reiciendis repellendus rerum sequi, sunt temporibus.</span>
+                        <?php echo $row['content'] ?>
                     </p>
                 </div>
             </div>
@@ -56,7 +59,6 @@
 
 
     </section>
-
 
 
 </main>
@@ -72,7 +74,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
-
 
 
 <script src="website/js/app.js"></script>

@@ -14,7 +14,7 @@
 }
 .banner-img-about{
   height: 450px;
-  background-image: url("../../website/img/banner-about.jpg");
+
   background-size: cover;
   background-position:   center;
 }
