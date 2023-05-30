@@ -25,8 +25,6 @@
                     <div class="card-body">
                         <h3>Contact </h3>
 
-
-
                         <div class="table-responsive scrollbar">
                             <table class="table">
                                 <thead>
